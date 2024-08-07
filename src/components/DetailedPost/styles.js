@@ -2,29 +2,12 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    height: 120,
-    padding: 5,
-    // alignContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-},
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
-  },
-  innerContainer: {
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    borderRadius: 10,
-    overflow: 'hidden',
-    // alignItems: 'center',
+    margin: 20,
   },
   image: {
-    height: '100%',
-    aspectRatio: 1,
+    width: '100%',
+    height: 200,
+    // aspectRatio: 3 / 2,
     resizeMode: 'cover',
     borderRadius: 8,
   },
@@ -34,11 +17,11 @@ const styles = StyleSheet.create({
     color: '#5b5b5b',
   },
   description: {
-    fontSize: 15,
+    fontSize: 18,
     lineHeight: 26,
   },
   prices: {
-    fontSize: 15,
+    fontSize: 18,
     marginVertical: 10,
   },
   oldPrice: {
@@ -51,7 +34,12 @@ const styles = StyleSheet.create({
   totalPrice: {
     color: '#5b5b5b',
     textDecorationLine: 'underline',
-  }
+  },
+  longDescription: {
+    marginVertical: 20,
+    fontSize: 16,
+    lineHeight: 24,
+  },
 });
 
 export default styles;

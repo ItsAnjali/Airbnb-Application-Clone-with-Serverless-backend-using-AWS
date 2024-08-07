@@ -21,8 +21,7 @@ const HomeTabNavigator = () => {
       }}>
       <Tab.Screen
         name={'Explore'}
-        // component={ExploreNavigator}
-        component={SearchResultsMap}
+        component={ExploreNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => (

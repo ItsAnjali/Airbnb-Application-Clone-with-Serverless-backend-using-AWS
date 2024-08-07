@@ -39,7 +39,7 @@ const Router = () => {
           name={'Post'}
           component={PostScreen}
           options={{
-            title: 'Find your Stay',
+            title: 'Accomodation',
           }}
         />
       </Stack.Navigator>

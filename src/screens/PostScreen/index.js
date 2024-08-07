@@ -1,18 +1,20 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import Post from '../../components/Post';
+import DetailedPost from '../../components/DetailedPost';
+import {useRoute} from '@react-navigation/native';
 
 import places from '../../../assets/data/feed';
 
 
-const postdata = places[0];
-
-
 const PostScreen = props => {
+  const route = useRoute();
+
+  const postdata = places.find(place => place.id === route.params.postId);
+
   return(
-    <View>
+    <View style={{backgroundColor: 'white'}}>
       <Text>rtyujhgftyujh</Text>
-      <Post post={postdata} />
+      <DetailedPost post={postdata} />
     </View>
   );
 };
