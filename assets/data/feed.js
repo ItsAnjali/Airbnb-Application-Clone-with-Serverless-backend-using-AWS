@@ -1,6 +1,6 @@
 export default [
   {
-    id: '0',
+    id: '1059f9b5-51bf-4e63-88b1-edaa16fa7242',
     image: 'https://www.toshaliresort.com/images/mall-road-shimla.jpg',
     type: 'Private Room in Shimla',
     title: 'Bright room in the heart of the city',
@@ -16,7 +16,7 @@ export default [
     },
   },
   {
-    id: '1',
+    id: 'a78e7669-6ffb-4b6e-ba92-e0facf71c373',
     image:
       'https://curlytales.com/wp-content/uploads/2023/12/hotel-industry-kullu-manali-cover.jpg',
     type: 'Entire Flat in Manali',
@@ -33,7 +33,7 @@ export default [
     },
   },
   {
-    id: '2',
+    id: 'db331272-3a8c-46a5-9b54-8f0961baae4a',
     image:
       'https://static.toiimg.com/photo/msid-93848872,width-96,height-65.cms',
     type: 'Private Property in Kashmir',
@@ -50,7 +50,7 @@ export default [
     },
   },
   {
-    id: '3',
+    id: '24b6a2bf-a056-4156-af4e-976b1afff44b',
     image:
       'https://media1.thrillophilia.com/filestore/pf3hv3jqvrjtt5rotnpr3v6a6y2d_1575268796_shutterstock_1136356946.jpg',
     type: 'Entire Flat in Rishikesh',

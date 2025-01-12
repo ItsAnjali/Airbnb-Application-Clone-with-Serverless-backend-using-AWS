@@ -8,9 +8,9 @@ import places from '../../../assets/data/feed';
 
 const PostScreen = props => {
   const route = useRoute();
-
+ console.log("Triggered = ",route.params.postId);
   const postdata = places.find(place => place.id === route.params.postId);
-
+console.log("Post data = ",postdata);
   return(
     <View style={{backgroundColor: 'white'}}>
       <Text>rtyujhgftyujh</Text>

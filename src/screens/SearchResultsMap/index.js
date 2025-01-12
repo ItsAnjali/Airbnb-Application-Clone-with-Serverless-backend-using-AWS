@@ -1,13 +1,14 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {View, FlatList, useWindowDimensions, ViewBase} from 'react-native';
 import MapView from 'react-native-maps';
-import places from '../../../assets/data/feed';
 import CustomMarker from '../../components/CustomMarker';
 import PostCarouselItem from '../../components/PostCarouselItem';
 
-
 const SearchResultsMap = props => {
+  const { posts } = props;
   const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+  console.log("Search posts map = "+posts?.length)
+
 
   const flatlist = useRef();
   const map = useRef();
@@ -20,19 +21,19 @@ const SearchResultsMap = props => {
     }
   })
 
-  const {width} = useWindowDimensions();
+  const { width } = useWindowDimensions();
+
 
   useEffect(() => {
     if (!selectedPlaceId || !flatlist.current) {
       return;
     }
-    const index = places.findIndex(place => place.id === selectedPlaceId);
-    flatlist.current.scrollToIndex({index});
-    // console.warn('scroll to ' + selectedPlaceId);
-    const selectedPlace = places[index];
+    const index = posts.findIndex((post) => post.id === selectedPlaceId);
+    flatlist.current.scrollToIndex({ index });
+    const selectedPlace = posts[index];
     const region = {
-      latitude: selectedPlace.coordinate.latitude,
-      longitude: selectedPlace.coordinate.longitude,
+      latitude: selectedPlace.latitude,
+      longitude: selectedPlace.longitude,
       latitudeDelta: 0.8,
       longitudeDelta: 0.8,
     }
@@ -51,30 +52,32 @@ const SearchResultsMap = props => {
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121,
         }}>
-        {places.map(place => (
+        {posts.map((post) => (
           <CustomMarker 
-            key={place.id}
-            isSelected={place.id === selectedPlaceId}
-            coordinate={place.coordinate}
-            price={place.newPrice}
-            onPress={() => setSelectedPlaceId(place.id)}
+            key={post.id}
+            isSelected={post.id === selectedPlaceId}
+            coordinate={{
+              latitude: post.latitude,
+              longitude: post.longitude,
+            }}
+            price={post.newPrice}
+            onPress={() => setSelectedPlaceId(post.id)}
           />
         ))}
 
       </MapView>
 
-      <View style={{position: 'absolute', bottom: 20}}>
-
+      <View style={{ position: "absolute", bottom: 20 }}>
         <FlatList
           ref={flatlist}
-          data={places}
-          renderItem={({item}) => <PostCarouselItem post={item} />}
+          data={posts}
+          renderItem={({ item }) => <PostCarouselItem post={item} />}
           horizontal
           showsHorizontalScrollIndicator={false}
           snapToInterval={width - 60}
           snapToAlignment={'center'}
           decelerationRate={'fast'}
-          keyExtractor={item => item.id.toString()}
+          keyExtractor={(item) => item.id.toString()}
           viewabilityConfig={viewConfig.current}
           onViewableItemsChanged={onViewChanged.current}
         />

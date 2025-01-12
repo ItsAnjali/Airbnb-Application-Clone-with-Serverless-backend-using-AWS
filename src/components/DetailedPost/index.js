@@ -4,9 +4,9 @@ import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 
 const Post = props => {
-  const {postdata} = props;
+  const postdata = props.post;
   const navigation = useNavigation();
-
+  console.log("PostData = "+postdata)
   return (
     <ScrollView>
       <View style={styles.container}>

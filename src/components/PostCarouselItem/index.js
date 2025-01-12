@@ -4,10 +4,10 @@ import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 
 
-const Post = props => {
-
-  const postdata = props.postdata;
-
+const Post1 = props => {
+  const postdata = props.post;
+  //console.log("Post data = ",postdata);
+  
   const {width} = useWindowDimensions();
 
   const navigation = useNavigation();
@@ -21,7 +21,6 @@ const Post = props => {
       onPress={goToPostPage}
       style={[styles.container, {width: width - 60}]}>
       <View style={styles.innerContainer}>
-        {/* Image */}
         <Image
           style={styles.image}
           source={{
@@ -47,4 +46,4 @@ const Post = props => {
   );
 };
 
-export default Post;
+export default Post1;

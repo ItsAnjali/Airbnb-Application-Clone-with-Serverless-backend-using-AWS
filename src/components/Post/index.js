@@ -26,13 +26,15 @@ props = {
   //   navigation.navigate('Post', {postId: post.id});
   // }
 
+const days = 7;
 
-const Post = props => {
-  const postdata = props.postdata;
+const Post = (props) => {
+  console.log("props = "+props+"  props.post = "+props.post)
+  const postdata = props.post;
   const navigation = useNavigation();
 
   const goToPostPage = () => {
-    navigation.navigate('Post', {postId: postdata.id});
+    navigation.navigate("Post", { postId: postdata.id });
   }
 
   return (
@@ -60,7 +62,7 @@ const Post = props => {
       </Text>
 
       {/* Total price */}
-      <Text style={styles.totalPrice}>Rs{postdata.totalPrice} total</Text>
+      <Text style={styles.totalPrice}>Rs{postdata.newPrice * days} total</Text>
     </Pressable>
   );
 };

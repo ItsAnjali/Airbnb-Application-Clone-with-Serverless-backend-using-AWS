@@ -2,6 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import HomeScreen from '../screens/Home';
+import ProfileScreen from "../screens/Profile";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Feather from 'react-native-vector-icons/Feather';
@@ -56,6 +57,16 @@ const HomeTabNavigator = () => {
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <Feather name="message-square" size={25} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={'Profile'}
+        component={ProfileScreen}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <EvilIcons name="user" size={25} color={color} />
           ),
         }}
       />
